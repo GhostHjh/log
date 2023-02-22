@@ -12,4 +12,6 @@ aux_source_directory(src include_src)
 
 add_executable(main ${main_file_name} ${include_src})
 
+target_link_libraries(main -pthread)
+
 add_compile_options(-std=c++11)
