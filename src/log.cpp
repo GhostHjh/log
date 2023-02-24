@@ -8,15 +8,15 @@
 
 const char* log::Level_s[4] = {"DEBUG", "INFO", "WARN", "ERROR"};
 
-log* log::_log = nullptr;
+log* log::_log = new log;
 
 log::log() :_read_Leve(log::DEBUG), log_path("./"), log_max_size(1024*1024*10) {}
 log::~log() {}
 
 log* log::insetance()
 {
-    if (log::_log == nullptr)
-        log::_log = new log();
+    //if (log::_log == nullptr)
+    //    log::_log = new log();
     
     return log::_log;
 }
